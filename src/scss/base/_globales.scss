@@ -8,8 +8,10 @@ html{
 }
 
 body{
+    box-sizing: inherit;
     font-size: 1.6rem;
     font-family:$fuente;
+    overflow-x: hidden;
 }
 
 h1{
