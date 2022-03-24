@@ -4,6 +4,8 @@ const webp = require('gulp-webp');
 const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
 const notify = require('gulp-notify');
+// const rename = require('gulp-rename');
+
 
 function css() {
     return src('src/scss/**/*.scss') 
@@ -11,13 +13,6 @@ function css() {
         .pipe( dest('./build/css') );
 
    
-}
-
- function sassFile() {
-   return src('src/**/*.sass')
-    .pipe(sass())
-    .pipe(dest('.build/css/'));
-      
 }
 
 function javascript() {
@@ -48,11 +43,10 @@ function versionWebp() {
 }
 function watchFiles() {
     watch('src/scss/**/*.scss', css);
-    watch('src/**/*.sass', sassFile)
     watch('src/**/*.js', javascript);
     watch('src/img/**/*', imagenes);
     watch('src/img/**/*', versionWebp);
     
 }
 
-exports.default = parallel(sassFile, css, javascript, imagenes, versionWebp, watchFiles);
+exports.default = parallel(css, javascript, imagenes, versionWebp, watchFiles);

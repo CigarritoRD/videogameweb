@@ -1,0 +1,187 @@
+header{
+    background:$verde;
+    height: 100vh;
+    background-image: url(/build/img/Princesa_Zelda_BotW.png);
+    background-size: cover;
+    background-position: center top;
+}
+
+.nav{
+    display: flex;
+    .links-list{
+        display: flex;
+        list-style: none;
+        align-items: center;
+        width: 100%;
+         li{
+            padding: 3rem 1.5%;
+            &:first-child{
+                font-weight: bold;
+               background-color: rgb(228, 65, 0);
+               font-size: 1.8rem;
+            }
+
+        }
+        
+    }
+
+    .bmore{
+        display: none;
+        .bmore-menu{
+            position: absolute;
+            display: none;
+            flex-direction: column;
+            padding: 0;
+            margin-top: 2rem;
+            
+            li{
+                background-color: rgba(0, 0, 0, 0.63);
+                padding: 1rem;
+                margin: 0;
+                list-style: none;
+                top: 0;
+                left: 0;
+                width: 100%;
+                &:first-child{
+                    background-color: rgba(0, 0, 0, 0.63);
+                    font-weight: normal;
+                }
+                a{
+                    display: inline-block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    
+}
+
+@media screen and(max-width: 900px) {
+
+
+    .nav{
+        .links-hide{
+            display: none;
+        }
+        .bmore{
+            display: block;
+        }
+    }
+
+}
+
+.show {
+ 
+    display: flex !important;
+
+}
+
+.links{
+    text-transform: capitalize;
+    position: relative;
+    color: white;
+
+    &::before{
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        margin-bottom: -1rem;
+        width: 100%;
+        height: 2px;
+        background-color: rgb(219, 219, 219);
+        transform: scale(0);
+        transition: transform .2s ease;
+        }
+}
+.links:hover{
+    &::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: whitesmoke;
+    transform: scale(1)
+    }
+}
+
+
+
+
+.menu__login{
+    ul{
+        display: flex;
+        padding: 3rem;
+        list-style: none;
+        li{
+            margin-right: 1rem;
+        }
+    }
+    
+}
+.mobile_menu{
+    display: none;
+}
+@media screen and (max-width: 768px){
+    .nav{
+        background-color: rgba(0, 0, 0, 0.712);
+        display: block;
+        padding: 2rem 1rem;
+
+        .links-list{
+            display: none;
+        }
+
+
+    } 
+    .mobile_header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        a{
+            color: white;
+        }
+        .bmenu{
+            background-color: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        
+    }  
+    .menu__login{
+        display: none;
+    }
+    .mobile_menu{
+        display: flex;
+    }
+
+
+    .menu-mobile-desplegable{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        position: absolute;
+        top: 6.8rem;
+        left: 0;
+        height: 30rem;
+        width: 100%;
+        padding: 0 2rem;
+        list-style: none;
+        background-color: rgba(0, 0, 0, 0.767);
+        a{
+            display: block;
+        }
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path .3s ease;
+       z-index: 100;
+    }
+    .menu-mobile-desplegable.show{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+    }
+}
